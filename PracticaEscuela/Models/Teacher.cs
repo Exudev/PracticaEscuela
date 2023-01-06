@@ -6,16 +6,29 @@ using System.Threading.Tasks;
 
 namespace PracticaEscuela.Models
 {
-    internal class Teacher : Person
+    public class Teacher : Person
     {
         public Carreer Carreer { get; set; }
         public List<Subject> ImpartingSubjects { get; set; }
+        public Teacher(string firstName, string lastName, int age, string identification, Carreer carreer)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.age = age;
+            this.Identification = identification;
+            this.Carreer = carreer;
+            this.ImpartingSubjects = new List<Subject>();
+        }
 
         public void AddSubject(Subject subsub)
         {
-            if (ContainsSubject(subsub) && SameDayCheck(subsub))
+            if (ContainsSubject(subsub))
             {
                 throw new Exception("Subject is already present");
+            }
+            else if (SameDayCheck(subsub))
+            {
+                throw new Exception("Subject is on the same day of another Subject");
             }
             else
             {
@@ -46,8 +59,6 @@ namespace PracticaEscuela.Models
                     {
                         sameDay = true;
                     }
-
-
                 }
             }
             return sameDay;

@@ -20,6 +20,13 @@
             Approved = approved;
 
         }
+        public Subject(string name, string code, int credits, DaysOfTheWeek impartedDay)
+        {
+            Name = name;
+            Code = code;
+            Credits = credits;
+            this.ImpartedDay= impartedDay;
+        }
         public void GetLetterGrade()
         {
             switch (this.Grade)
