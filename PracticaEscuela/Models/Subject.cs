@@ -9,6 +9,17 @@
         public string LetterGrade { get; set; }
         public bool Approved { get; set; }
         public DaysOfTheWeek ImpartedDay { get; set; }
+
+
+        public Subject(string name, string code, int credits, decimal grade,  bool approved)
+        {
+            Name = name;
+            Code = code;
+            Credits = credits;
+            Grade = grade;
+            Approved = approved;
+
+        }
         public void GetLetterGrade()
         {
             switch (this.Grade)
@@ -37,37 +48,8 @@
             }
         }
 
-        public string AsingLetterGradePablo(int grade)
-        {
-            string gradeletter;
-            switch (grade)
-            {
-                case < 60:
-                    gradeletter = "F";
-                    break;
-                case < 70:
-                    gradeletter = "D";
-                    break;
-                case < 75:
-                    gradeletter = "C";
-                    break;
-                case < 80:
-                    gradeletter = "C+";
-                    break;
-                case < 85:
-                    gradeletter = "B";
-                    break;
-                case < 90:
-                    gradeletter = "B+";
-                    break;
-                default:
-                    gradeletter = "A";
-                    break;
-            }
-            return gradeletter;
+       
 
-
-        }
         public enum DaysOfTheWeek
         {
             Monday,
