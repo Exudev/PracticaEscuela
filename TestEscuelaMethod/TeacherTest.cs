@@ -13,7 +13,7 @@ namespace TestEscuelaMethod
     {
         [TestMethod]
         //A teacher can't have 2 subjects on the same day
-        public void AddSubjectOnSameDay()
+        public void TestMethodAddSubjectOnSameDay()
         {
             //Arrange
             PracticaEscuela.Models.Teacher teacher = new PracticaEscuela.Models.Teacher("Carmen", "Montero", 25, "402-10358945-9",
@@ -28,7 +28,7 @@ namespace TestEscuelaMethod
             Assert.AreSame(exception.Message, "Subject is on the same day of another Subject");
         }
         [TestMethod]
-        public void SubjectAlreadyExists()
+        public void TestMethodSubjectAlreadyExists()
         {
             //Arrange
             PracticaEscuela.Models.Teacher teacher = new PracticaEscuela.Models.Teacher("Carmen", "Montero", 25, "402-10358945-9",
@@ -42,7 +42,7 @@ namespace TestEscuelaMethod
             Assert.AreSame(exception.Message, "Subject is already present");
         }
         [TestMethod]
-        public void DropSubjectNotRegistered()
+        public void TestMethodDropSubjectNotRegistered()
         {
             //Arrange
             PracticaEscuela.Models.Teacher teacher = new PracticaEscuela.Models.Teacher("Carmen", "Montero", 25, "402-10358945-9",
