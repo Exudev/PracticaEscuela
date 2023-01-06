@@ -11,4 +11,7 @@ namespace PracticaEscuela.Models
         public Carreer Carreer { get; set; }
         public List<Subject> ImpartingSubjects { get; set; }
     }
+
+
+   
 }
