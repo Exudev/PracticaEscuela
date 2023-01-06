@@ -19,7 +19,7 @@ namespace PracticaEscuela.Models
             this.Carreer = carreer;
             this.ImpartingSubjects = new List<Subject>();
         }
-
+        public Teacher() { this.ImpartingSubjects = new List<Subject>(); }
         public void AddSubject(Subject subsub)
         {
             if (ContainsSubject(subsub))
@@ -43,11 +43,6 @@ namespace PracticaEscuela.Models
             }
             else { throw new Exception("Subject does not exist"); }
         }
-        public bool ContainsSubject(Subject subsub)
-        {
-            return this.ImpartingSubjects.Contains(subsub);
-        }
-
         public bool SameDayCheck(Subject subsub)
         {
             bool sameDay = false;
@@ -63,8 +58,28 @@ namespace PracticaEscuela.Models
             }
             return sameDay;
         }
-
+        public void GradeSubject(Student student, Subject subsub, int grade)
+        {
+            if (!ContainsSubject(subsub))
+            {
+                throw new Exception("This subject is not imparted by you");
+            }
+            else if (!StudentIsOnSubjectCheck(student, subsub))
+            {
+                throw new Exception("Student is not cursing this subject");
+            }
+            else
+            {
+                student.ChosenSubjects.Where(c => c == subsub).ToList().ForEach(c => { c.Grade = grade; });
+            }
+        }
+        public bool StudentIsOnSubjectCheck(Student student, Subject subsub)
+        {
+            return student.ChosenSubjects.Contains(subsub);
+        }
+        public bool ContainsSubject(Subject subsub)
+        {
+            return this.ImpartingSubjects.Contains(subsub);
+        }
     }
-
-
 }

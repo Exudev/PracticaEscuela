@@ -9,14 +9,16 @@
         public string LetterGrade { get; set; }
         public bool Approved { get; set; }
         public DaysOfTheWeek ImpartedDay { get; set; }
+        public Teacher Teacher { get; set; }
 
 
-        public Subject(string name, string code, int credits, DaysOfTheWeek impartedDay)
+        public Subject(string name, string code, int credits, DaysOfTheWeek impartedDay, Teacher teacher)
         {
             Name = name;
             Code = code;
             Credits = credits;
-            this.ImpartedDay= impartedDay;
+            this.ImpartedDay = impartedDay;
+            this.Teacher = teacher;
         }
         public void GetLetterGrade()
         {

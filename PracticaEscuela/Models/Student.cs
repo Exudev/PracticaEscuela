@@ -1,8 +1,8 @@
 ﻿namespace PracticaEscuela.Models
 {
-    internal class Student : Person
+    public class Student : Person
     {
-        public Student(Carreer chosenCarreer) { this.Carreer = chosenCarreer; }
+        public Student(Carreer chosenCarreer) { this.Carreer = chosenCarreer; this.ChosenSubjects = new List<Subject>(); }
         public Carreer Carreer { get; set; }
         public List<Subject> ChosenSubjects { get; set; }
 

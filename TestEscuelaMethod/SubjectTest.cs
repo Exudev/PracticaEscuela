@@ -8,7 +8,8 @@ namespace TestEscuelaMethod
         public void TestMethodIsPass()
         {
             //Arrange
-            PracticaEscuela.Models.Subject subject = new PracticaEscuela.Models.Subject("Algebra Lineal", "Pipiripiropi", 4, PracticaEscuela.Models.Subject.DaysOfTheWeek.Friday);
+            PracticaEscuela.Models.Subject subject = new PracticaEscuela.Models.Subject("Algebra Lineal", "Pipiripiropi", 4, PracticaEscuela.Models.Subject.DaysOfTheWeek.Friday,
+                new PracticaEscuela.Models.Teacher());
             subject.Grade = 50;
             bool expected = false;
             //Act
@@ -24,7 +25,8 @@ namespace TestEscuelaMethod
         {
             //Arrange
          
-            PracticaEscuela.Models.Subject subject = new("Construccion de Software", "IDS420", 4, PracticaEscuela.Models.Subject.DaysOfTheWeek.Tuesday);
+            PracticaEscuela.Models.Subject subject = new("Construccion de Software", "IDS420", 4, PracticaEscuela.Models.Subject.DaysOfTheWeek.Tuesday,
+                new PracticaEscuela.Models.Teacher());
             subject.Grade = 100;
             string expected = "A";
             //Act
@@ -39,7 +41,8 @@ namespace TestEscuelaMethod
         public void TestMethodValidGrade()
         {
             //Arrange
-            PracticaEscuela.Models.Subject subject = new PracticaEscuela.Models.Subject("Redaccion", "ESO240", 4, PracticaEscuela.Models.Subject.DaysOfTheWeek.Monday);
+            PracticaEscuela.Models.Subject subject = new PracticaEscuela.Models.Subject("Redaccion", "ESO240", 4, PracticaEscuela.Models.Subject.DaysOfTheWeek.Monday,
+                new PracticaEscuela.Models.Teacher());
             subject.Grade = 120;
             bool expected = false;
             //Act
