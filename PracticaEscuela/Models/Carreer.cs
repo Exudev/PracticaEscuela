@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace PracticaEscuela.Models
 {
-    internal class Grade
+    internal class Carreer
     {
+        public string Name { get; set; }
+        public List<Subject> Subjects { get; set; }
     }
 }
