@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PracticaEscuela.Models
+﻿namespace PracticaEscuela.Models
 {
     internal class Person
     {
@@ -13,9 +7,5 @@ namespace PracticaEscuela.Models
         public int age { get; set; }
         public string Identification { get; set; }
 
-        
-
     }
-
-    
 }

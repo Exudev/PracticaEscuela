@@ -1,4 +1,3 @@
-using PracticaEscuela.Models;
 namespace TestPracticEscuela
 {
     
@@ -9,7 +8,7 @@ namespace TestPracticEscuela
         [Fact]
         public void Test1()
         {
-           
+         
             
             //Arrange
             int nota = 97;
