@@ -46,6 +46,18 @@
             }
         }
 
+        public bool IsAValidGrade()
+        {
+            if(this.Grade <= 100 && this.Grade >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void IsPass()
         {
             if (this.Grade >= 70)

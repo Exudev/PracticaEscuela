@@ -33,5 +33,19 @@ namespace TestEscuelaMethod
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+
+        [TestMethod]
+        public void TestMethodValidGrade()
+        {
+            //Arrange
+            PracticaEscuela.Models.Subject subject = new PracticaEscuela.Models.Subject("Redaccion", "ESO240", 4);
+            subject.Grade = 120;
+            bool expected = false;
+            //Act
+            bool actual = subject.IsAValidGrade();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
