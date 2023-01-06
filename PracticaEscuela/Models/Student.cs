@@ -12,6 +12,7 @@ namespace PracticaEscuela.Models
         public Student(Carreer chosenCarreer) { this.Carreer = chosenCarreer; }
         public Carreer Carreer { get; set; }
         public List<Subject> ChosenSubjects { get; set; }
+
         public void AddSubject(Subject subsub)
         {
             if (ContainsSubject(subsub))
@@ -23,7 +24,7 @@ namespace PracticaEscuela.Models
                 this.ChosenSubjects.Add(subsub);
             }
         }
-        public void DropSubject(Subject subsub) 
+        public void DropSubject(Subject subsub)
         {
             if (ContainsSubject(subsub))
             {

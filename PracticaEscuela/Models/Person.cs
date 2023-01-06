@@ -13,5 +13,9 @@ namespace PracticaEscuela.Models
         public int age { get; set; }
         public string Identification { get; set; }
 
+        
+
     }
+
+    
 }
