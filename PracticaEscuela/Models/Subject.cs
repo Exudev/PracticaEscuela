@@ -11,13 +11,11 @@
         public DaysOfTheWeek ImpartedDay { get; set; }
 
 
-        public Subject(string name, string code, int credits, decimal grade,  bool approved)
+        public Subject(string name, string code, int credits)
         {
             Name = name;
             Code = code;
             Credits = credits;
-            Grade = grade;
-            Approved = approved;
 
         }
         public Subject(string name, string code, int credits, DaysOfTheWeek impartedDay)
@@ -55,6 +53,29 @@
             }
         }
 
+        public bool IsAValidGrade()
+        {
+            if(this.Grade <= 100 && this.Grade >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void IsPass()
+        {
+            if (this.Grade >= 70)
+            {
+                this.Approved = true;
+            }
+            else
+            {
+                this.Approved = false;
+            }
+        }
        
 
         public enum DaysOfTheWeek
