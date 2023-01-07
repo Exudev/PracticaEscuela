@@ -50,14 +50,19 @@
 
         public bool IsAValidGrade()
         {
-            if(this.Grade <= 100 && this.Grade >= 0)
+            try
             {
+               if(this.Grade <= 100 && this.Grade >= 0)
+               {
+                GetLetterGrade(); 
                 return true;
+               }
             }
-            else
+            catch (Exception)
             {
-                return false;
+                throw new Exception("Thats not a valid grade");
             }
+            return false;
         }
 
         public void IsPass()
