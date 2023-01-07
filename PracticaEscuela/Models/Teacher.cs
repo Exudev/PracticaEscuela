@@ -22,25 +22,13 @@ namespace PracticaEscuela.Models
         public Teacher() { this.ImpartingSubjects = new List<Subject>(); }
         public void AddSubject(Subject subsub)
         {
-            if (ContainsSubject(subsub))
-            {
-                throw new Exception("Subject is already present");
-            }
-            else if (SameDayCheck(subsub))
-            {
-                throw new Exception("Subject is on the same day of another Subject");
-            }
-            else
-            {
-                this.ImpartingSubjects.Add(subsub);
-            }
+            if (ContainsSubject(subsub)) { throw new Exception("Subject is already present"); }
+            else if (SameDayCheck(subsub)) { throw new Exception("Subject is on the same day of another Subject"); }
+            else  { this.ImpartingSubjects.Add(subsub); }
         }
         public void DropSubject(Subject subsub)
         {
-            if (ContainsSubject(subsub))
-            {
-                this.ImpartingSubjects.Remove(subsub);
-            }
+            if (ContainsSubject(subsub)) { this.ImpartingSubjects.Remove(subsub); }
             else { throw new Exception("Subject does not exist"); }
         }
         public bool SameDayCheck(Subject subsub)
@@ -50,36 +38,21 @@ namespace PracticaEscuela.Models
             {
                 foreach (Subject subject in ImpartingSubjects)
                 {
-                    if (subject.ImpartedDay == subsub.ImpartedDay)
-                    {
-                        sameDay = true;
-                    }
+                    if (subject.ImpartedDay == subsub.ImpartedDay) { sameDay = true; }
                 }
             }
             return sameDay;
         }
         public void GradeSubject(Student student, Subject subsub, int grade)
         {
-            if (!ContainsSubject(subsub))
-            {
-                throw new Exception("This subject is not imparted by you");
-            }
-            else if (!StudentIsOnSubjectCheck(student, subsub))
-            {
-                throw new Exception("Student is not cursing this subject");
-            }
+            if (!ContainsSubject(subsub)) { throw new Exception("You are not imparting this subject"); }
+            else if (!StudentIsOnSubjectCheck(student, subsub)) { throw new Exception("Student is not cursing this subject"); }
             else
             {
                 student.ChosenSubjects.Where(c => c == subsub).ToList().ForEach(c => { c.Grade = grade; });
             }
         }
-        public bool StudentIsOnSubjectCheck(Student student, Subject subsub)
-        {
-            return student.ChosenSubjects.Contains(subsub);
-        }
-        public bool ContainsSubject(Subject subsub)
-        {
-            return this.ImpartingSubjects.Contains(subsub);
-        }
+        public bool StudentIsOnSubjectCheck(Student student, Subject subsub) { return student.ChosenSubjects.Contains(subsub);  }
+        public bool ContainsSubject(Subject subsub) { return this.ImpartingSubjects.Contains(subsub); }
     }
 }
